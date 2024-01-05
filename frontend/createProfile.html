@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Page</title>
+  <script>
+    function addField(section) {
+      var container = document.getElementById(section + "-container");
+      var input = document.createElement("textarea");
+      input.name = section;
+      input.rows = "4";
+      input.cols = "50";
+      container.appendChild(input);
+      container.appendChild(document.createElement("br"));
+    }
+
+    function removeField(section) {
+      var container = document.getElementById(section + "-container");
+      var inputs = container.getElementsByTagName("textarea");
+      if (inputs.length > 1) {
+        container.removeChild(inputs[inputs.length - 1]);
+        container.removeChild(container.lastChild);
+      }
+    }
+  </script>
+  <title>Software Engineering Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">      
+      </div>
+    <nav>
+      <ul>
+       
+        <li><a href="#signup.html">User Name</a></li>
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+      <h1>Profile Page</h1>
+  
+  <h2>Education</h2>
+  <div id="education-container">
+    <textarea name="education" rows="4" cols="50"></textarea><br><br>
+  </div>
+  <button onclick="addField('education')">Add Education</button>
+  <button onclick="removeField('education')">Remove Education</button>
+  
+  <h2>Experience</h2>
+  <div id="experience-container">
+    <textarea name="experience" rows="4" cols="50"></textarea><br><br>
+  </div>
+  <button onclick="addField('experience')">Add Experience</button>
+  <button onclick="removeField('experience')">Remove Experience</button>
+  
+  <h2>Projects</h2>
+  <div id="projects-container">
+    <textarea name="projects" rows="4" cols="50"></textarea><br><br>
+  </div>
+  <button onclick="addField('projects')">Add Project</button>
+  <button onclick="removeField('projects')">Remove Project</button>
+  
+  <h2>Licenses and Certifications</h2>
+  <div id="licenses-container">
+    <textarea name="licenses" rows="4" cols="50"></textarea><br><br>
+  </div>
+  <button onclick="addField('licenses')">Add License/Certification</button>
+  <button onclick="removeField('licenses')">Remove License/Certification</button>
+  
+  <h2>Skills</h2>
+  <div id="skills-container">
+    <textarea name="skills" rows="4" cols="50"></textarea><br><br>
+  </div>
+  <button onclick="addField('skills')">Add Skill</button>
+  <button onclick="removeField('skills')">Remove Skill</button>
+  
+  <button onclick="saveProfile()">Save</button>
+
+  <script>
+    function saveProfile() {
+      var profileData = {};
+
+      // Get the values from the textareas
+      var sections = ['education', 'experience', 'projects', 'licenses', 'skills'];
+      for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var container = document.getElementById(section + '-container');
+        var inputs = container.getElementsByTagName('textarea');
+        var values = [];
+        for (var j = 0; j < inputs.length; j++) {
+          values.push(inputs[j].value);
+        }
+        profileData[section] = values;
+      }
+
+      // Send the profile data to the server or perform further actions
+      console.log(profileData);
+      // You can modify this function to send the data using AJAX or perform other operations as needed
+    }
+  </script>
+  <footer>
+    <p>&copy; 2024 Anteneh Mulusew. All rights reserved.</p>
+  </footer>
+</body>
+</html>
