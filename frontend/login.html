@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">      
+        </div>
+  </header>
+
+  <section id="signin">
+    <h2>Login</h2>
+    <form action="process_login.php" method="POST">
+      <label for="username_or_email">Username or Email:</label>
+      <input type="text" id="username_or_email" name="username_or_email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" value="Login">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Anteneh Mulusew. All rights reserved.</p>
+  </footer>
+</body>
+</html>
