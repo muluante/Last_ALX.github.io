@@ -1,5 +1,6 @@
 /* styles.css */
 
+/*No margin or padding on body*/
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -7,17 +8,20 @@ body {
     padding: 0;
   }
   
+/*header styling*/
   header {
     background-color: #4949e2;
     padding: 20px;
     
   }
+ /*header image properies*/
   header img {
     width: 200px;
     height: 50px;
     border-radius: 22%;
     
   }
+ /*remove bullet points*/
   nav ul {
     list-style-type: none;
     margin: 0;
@@ -26,34 +30,62 @@ body {
     float: right;
   }
   
+/*set margin for list items*/
   nav ul li {
    
     margin-right: 20px;
   }
   
-  nav ul li a {
+  /*navigation link style*/ 
+   nav ul li a {
     color: #fff;
     text-decoration: none;
     
   }
   
-  section {
+
+ /*section styles*/
+ section {
     padding: 40px;
     background-color: #fff;
   }
   
+ /*center text*/
   h1 {
     text-align: center;
     color: #881717;
   }
-  h4 {
+ /*set text alignment to justify*/ h4 {
     text-align: justify;
     color: black;
   } 
-  footer {
+/*footer styling*/  footer {
     background-color: #333;
     padding: 20px;
     color: #fff;
     text-align: center;
   }
+  /*create a formelement*/
+  form {
+    display: flex;
+    flex-direction: column;
+  }
   
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /*button styles*/
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
