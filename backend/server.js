@@ -1,16 +1,26 @@
 // server js
 const express = require('express');
-const mysql = require('mysql');
 const app = express();
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
 
-app.use(express.json());
+app.use (bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 // Create a MySQL connection pool 
-const pool = mysql.createPool({
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'anteneh',
   password: '5683#@!Love',
   database: 'portfolio',
+});
+// callback function for connecting to database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to database: ' + err.stack);
+    return;
+  }
+  console.log('Connected to database as id ' + connection.threadId);
 });
 
 // Define the signup route
